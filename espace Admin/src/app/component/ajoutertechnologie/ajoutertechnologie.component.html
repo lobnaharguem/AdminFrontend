@@ -1,0 +1,12 @@
+
+<form [formGroup]="form">
+    <div class="form-group">
+        <h3>Ajouter technologie</h3>
+      <label for="exampleInputEmail1">Libelle</label>
+      <input type="text" class="form-control" formControlName="libelle" >
+      <br>
+
+    </div>
+     
+    <button class="btn btn-lg btn-block btn-primary" style="background-color: #88caa0;" type="submit" class="btn btn-primary"  (click)="Createtechnologie()">Ajouter </button>
+  </form>

@@ -1,0 +1,51 @@
+<div class="manage-jobs-box">
+    <h3>Gerer les candidatures</h3>
+
+    <div class="bar"></div>
+
+    <div class="form-group">
+        <input type="text"  [(ngModel)]="term"    class="form-control" placeholder="rechercher">
+        </div>
+    <div class="manage-jobs-table table-responsive">
+    <table class="table table-bordered">
+        
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+
+        <th>condidature ID</th>
+        <th>candidat</th>
+        <th>offre</th>
+        <th>STATUS</th>
+
+        <th>Date</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of listcandidature |filter:term|paginate:{itemsPerPage:5,currentPage:p};let index=index">
+            <th >{{index+1}}</th>
+
+            <td>{{p._id}}</td>
+            <td>
+       {{p.candidat.username}}
+                
+            <td >{{p.offre.titre}}</td>
+            <td class="text-center"><span >{{p.resultat}}</span></td>
+
+
+            <td>{{p.createdAt | date: 'yyyy-MM-dd'}}</td>
+    <td>
+    <ul class="option-list">
+    <li><button  [routerLink]="['/home/viewcandidature',p._id]" class="option-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="View Aplication" type="button"><i class="ri-eye-line"></i></button></li>
+    <li><button (click)="deletecandidature(p._id)" class="option-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete Aplication" type="button"><i class="ri-delete-bin-line"></i></button></li>
+    </ul>
+    </td>
+    </tr>
+   
+    </tbody>
+    </table>
+    </div>
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+
+    </div>

@@ -1,0 +1,60 @@
+<div class="col-lg-12">
+    <div class="sidebar">
+                            <h3 class="widget-title">Details de la candidature</h3>
+
+        <div class="sidebar-widget">
+            <div class="billing-form-item mb-0">
+                <div class="billing-title-wrap">
+                    <br>
+                    <div class="title-shape"></div>
+                </div><!-- billing-title-wrap -->
+                <div class="billing-content">
+                    <h4 class="widget-title">offre</h4>
+
+                    <div class="col-lg-12">
+                        <div class="recent-job-card box-shadow">
+                        <div class="content">
+                        <div class="recent-job-img">
+                        <a >
+                        <img src="assets/images/recent-job/recent-job4.jpg" alt="Images">
+                        </a>
+                        </div>
+                        <h3><a >{{candidature.offre.titre}}</a></h3>
+                        <ul class="job-list1">
+                        <li><i class="ri-briefcase-line">{{candidature.offre.experience}}</i> </li>
+                        </ul>
+                       
+                        </div>
+                        <div class="job-sub-content">
+                        <ul class="job-list2">
+                        <li class="freelance">{{candidature.offre.typeoffre}}</li>
+                        
+                        </ul>
+                        
+                        </div>
+                        </div>
+   
+                    <div class="info-list static-info">
+                        <h4 class="widget-title">candidat</h4>
+
+                        <ul>
+                            <li class="mb-3 d-flex align-items-center"><p><i class="la la-user"></i> <span class="color-text-2 font-weight-medium mr-1">Nom du candidat:</span> {{candidature.candidat.username}}</p></li>
+
+<!--                                         <li class="mb-3 d-flex align-items-center"><p><i class="la la-users"></i> <span class="color-text-2 font-weight-medium mr-1">Offered Salary:</span> $35k - $38k</p></li>
+-->                                        
+                            <li class="d-flex align-items-center"><p><i class="la la-user"></i> <span class="color-text-2 font-weight-medium mr-1">Email:</span> {{candidature.candidat.email}}</p></li>
+<br>
+<br>
+                        </ul>
+                    </div>
+                   
+                </div>
+
+            </div>
+        </div><!-- end sidebar-widget -->
+        
+        
+       
+       
+    </div><!-- end sidebar -->
+</div><!-- end col-lg-4 -->

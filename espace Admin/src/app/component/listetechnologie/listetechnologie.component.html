@@ -1,0 +1,65 @@
+
+
+<div class="manage-jobs-box">
+    <div class="bar"></div>
+<button routerLink="/home/ajoutertechnologie" >+</button>
+    <h3>Gerer les technologies</h3>
+    
+    <div class="manage-jobs-table table-responsive">
+    <table class="table table-bordered">
+        
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+
+            <th>libelle</th>
+        
+
+            <th >Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of listtechnologie |filter:term|paginate:{itemsPerPage:5,currentPage:p};let index=index">
+            <th scope="row">{{index+1}}</th>
+
+            <td>
+                {{p.libelle}}
+            </td>
+
+            <td>
+                <ul class="option-list">
+                <li><button class="option-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top"
+                     title="Approve Aplication" type="button"   [routerLink]="['/home/updatetechnologie',p._id]"><i class="ri-edit-line"></i></button></li>
+                <li><button (click)="deletetechnologie(p._id)" class="option-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete Aplication" type="button"><i class="ri-delete-bin-line"></i></button></li>
+                </ul>
+            </td>
+                
+          </tr>
+   
+    </tbody>
+    </table>
+    </div>
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

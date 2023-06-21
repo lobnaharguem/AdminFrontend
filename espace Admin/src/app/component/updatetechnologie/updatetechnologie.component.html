@@ -1,0 +1,12 @@
+<form [formGroup]="form">
+    <div class="form-group">
+        <h3>Mettre à jour  technologie</h3>
+
+      <label for="exampleInputEmail1">libelle</label>
+     
+      <input type="text" class="form-control" formControlName="libelle" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <br>
+    </div>
+    
+    <button class="btn btn-lg btn-block btn-primary" style="background-color: #88caa0;" type="submit" class="btn btn-primary"  (click)="Updatetechnologie()">update</button>
+  </form>

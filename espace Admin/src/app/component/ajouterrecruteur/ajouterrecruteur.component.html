@@ -1,0 +1,49 @@
+
+<form [formGroup]="form">
+    <div class="col-6">
+        <h3>Ajouter Recruteur</h3>
+      <label for="exampleInputEmail1">username</label>
+      <input type="text" class="form-control" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f['username'].errors }">
+      <br>
+      <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+        <div *ngIf="f['username'].errors['required']">nom d'utilisateur obligatoire</div>
+      </div>
+    </div>
+    <div class="col-6">
+      <label for="exampleInputEmail1">email</label>
+      <input type="email" class="form-control"  pattern="[a-zA-Z0-9._%+-]+@etcinfo\.fr" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"  >
+      <br>
+      <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+        <div *ngIf="f['email'].errors['required']">Email obligatoire</div>
+        <div *ngIf="f['email'].errors['email']">Email  invalide</div>
+        <div *ngIf="f['email'].errors['pattern']">L'email doit être de la forme @etcinfo.fr</div>
+
+      </div>
+    </div>
+    <div class="col-6">
+        <label for="exampleInputEmail1">password</label>
+
+        <input type="password" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" >
+        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+          <div *ngIf="f['password'].errors['required']">Password  obligatoire</div>
+          <div *ngIf="f['password'].errors['minlength']">
+
+Le mot de passe doit être au moins de 6 caractères                                                        </div>
+          <div *ngIf="f['password'].errors['maxlength']">
+              Le mot de passe ne doit pas dépasser 20 caractères                                                        </div>
+        </div>
+        <br>
+  
+      </div>
+      
+      <div class="col-6">
+        <label for="exampleInputEmail1">photo</label>
+        <input type="file" class="form-control" (change)="handleFileInput($event)"  formControlName="file">
+        <div *ngIf="submitted && form.controls['file'].errors?.['required']" class="text-danger">selectionner un fichier.</div>                     
+
+        <br>
+  
+      </div>
+     
+    <button class="btn btn-lg btn-block btn-primary" style="background-color: #88caa0;" type="submit" class="btn btn-primary"  (click)="Createrecruteur()">Ajouter </button>
+  </form>
